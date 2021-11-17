@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 태그 사용하기</title>
+</head>
+<body>
+    <div>
+        <h3>선택 목록을 가진 텍스트 입력</h3>
+        <hr>
+        <form action="">
+            나라 : <input type="text" list="countries"><br>
+            <datalist id="countries">
+                <option value="가나">가나</option>
+                <option value="스위스">스위스</option>
+                <option value="브라질">브라질</option>
+            </datalist>
+            보고싶은것 : <input type="text" list="what"><br>
+            <datalist id="what">
+                <option value="산">산</option>
+                <option value="바다">바다</option>
+                <option value="도시">도시</option>
+            </datalist>
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>버튼을 만들자</h3>
+        <hr>
+        <form action="#">
+            검색 : <input type="text" size="10" value="기본값">
+                   <input type="button" onclick="alert('input 태그 type:button 방식');" value="Q1">
+                   <button type="button" onclick="alert('button 태그 type:button 방식');">Q2</button>
+                   <br>
+            submit 버튼 : <input type="submit" onclick="alert('input 태그 type:submit 방식');" value="Q1" value="전송1">
+                          <button type="submit" onclick="alert('button 태그 type:submit 방식');">전송2</button> 
+                   <br>
+            reset 버튼 : <input type="reset" onclick="alert('input 태그 type:reset 방식');" value="Q1" value="리셋1">
+                         <button type="reset" onclick="alert('button 태그 type:reset방식');">리셋2</button>
+                   <br>
+            이미지버튼 : <input type="image" src="./p1.png" onclick="alert('input 태그 type:image 방식');" value="Q1" alt="이미지 버튼">
+                        <button type="button" onclick="alert('button 태그 type:image 방식');">
+                         <img src="./p1.png" alt="이미지 버튼">   
+                        </button>                   
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>체크 박스, 라디오버튼 만들기</h3>
+        <hr>
+        <div>
+            <form action="">
+                <!--아래와 같은 형식으로 되어 있을 경우 서버에 전송되는 데이터는 value 속성이 가지고 있는 데이터가 전송됨 -->
+                자장면 <input type="checkbox" value="1">
+                짬뽕 <input type="checkbox" value="2" checked>
+                탕수육 <input type="checkbox" value="3">
+            </form>
+        </div>
+    </div>   
+    <br>
+    <div>
+        <form action="">
+            <input type="radio" name="china" value="1">자장면<br>
+            <input type="radio" name="china" value="2">짬뽕<br>
+            <input type="radio" name="china" value="3">탕수육<br>
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>드랍다운버튼</h3>
+        <hr>
+        <form action="">
+            <select name="china" id="">
+                <option value="자장면">자장면</option>
+                <option value="짬뽕" selected>짬뽕</option>
+                <option value="탕수육">탕수육</option>
+                <option value="칠리새우">칠리새우</option>
+                <option value="군만두">군만두</option>
+            </select>
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>컬러픽커</h3>
+        <hr>
+        <form action="">
+            <label>컬러 선택 :
+                <!--onchange: 자바스크립트 이벤트-> 내용이 변겨오디었을 경우 동작하는 이벤트-->
+                <input type="color" onchange="document.body.style.color=this.Value">       
+            </label>
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>시간 정보 입력 html5 폼 요소</h3>
+        <hr>
+        <form action="">
+            <pre>
+month : <input type="month" value="2021-11-03">
+<br>
+week : <input type="week" value="2021-w36">
+<br>
+data : <input type="data" value="2016-09-01">
+<br>
+time : <input type="time" value="21:30">
+<br>
+<input type="datatime-local" value="2021-11-03T21:30:10.32">                          
+            </pre>
+        </form>
+    </div>
+
+    <div>
+        <h3>시간 정보 응용</h3>
+        <hr>
+        <form action="">
+            <table>
+                <tr>
+                    <td>생일</td>
+                    <input type="data" value="2021-11-03"></tr>
+                <tr>
+                    <td>생일파티 시간</td>
+                    <input type="time"></tr>
+                <tr>
+                    <td>생일파티장소</td>
+                    <input type="text"></tr>
+            </table>
+        </form>
+    </div>
+
+    <br><hr><br>
+    <div>
+        <h3>숫자 입력하기</h3>
+        <hr>
+        <form action="">
+            지속시간(0.0~10.0시간) :
+            <input type="number" min="0.0" max="10.0" step="0.5">
+            <br><br>
+            온도설정 : 10&deg;
+            <input type="range" min="10" max="30" list="temperatures">30&deg;
+            <datalist id="temperatures">
+                <option value="12" label="Low">
+                <option value="20" label="Medium">
+                <option value="28" label="High">
+            </datalist>                    
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>회원 정보를 입력해주세요</h3>
+        <hr>
+        <form action="">
+            email : <input type="email" placeholder="id@host"><br>
+            홈페이지 : <input type="url" placeholder="http://"><br>
+            전화번호 : <input type="tel" placeholder="010-1234-5678"><br>
+            <input type="submit" value="확인"><br><br>
+            <hr>
+            검색어 : <input type="search" placeholder="검색어"><br><br>
+            <input type="button" value="검색">
+        </form>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+        <h3>fieldset 사용하기</h3>
+        <hr>
+        <form action="">
+             <fieldset>
+                <legend>회원정보</legend>
+                <label for=""> 이메일 : 
+                    <input type="email" placeholder="이메일을 입력해주세요"><br></label>
+                <label for=""> 홈페이지 : </label>
+                    <input type="url" placeholder="http://">
+                전화번호 : <input type="tel" placeholder="010-xxxx-xxxx">                         
+             </fieldset>
+             <small>질문 : tel. 010-1234-5678</small>
+        </form>
+    </div>
+</body>
+</html>
